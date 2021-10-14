@@ -15,7 +15,7 @@
         crossorigin="anonymous"></script>
     <style>
         header {
-            color: brown;
+            color: darkolivegreen;
             font-family: 'Times New Roman', Times, serif;
             font-size: xx-large;
             text-shadow: 2px 2px 4px #000000;
@@ -30,13 +30,13 @@
         #tries {
             font-size: medium;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            color: red;
+            color: darkorange;
         }
 
         #distance {
             font-size: medium;
             font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            color: coral;
+            color: darkseagreen;
         }
 
         .column {
@@ -52,7 +52,8 @@
     <p>Click On the <b>squares</b> to search for wild life</p>
     <p id="tries">Number of tries is zero.</p>
     <p id="distance">Distance is unknown.</p>
-   
+    <br>
+    <button onclick="newGame()">Reset</button>
     <div class="container">
         <div class="row">
             <div class="column"><img src="pichika.webp" width=100 hight=100 id="image1" onclick="check(0);"></div>
@@ -141,7 +142,16 @@
 
         }
 
-        
+        function newGame() {
+            triesCount = 0
+            animalLocation = Math.floor(Math.random() * 23 + 0)
+            document.getElementById("tries").innerHTML = "Number of tries is 0."
+            for (var i = 0; i < 24; i++) {
+                if (ids[i] == ids[animalLocation])
+                    document.getElementById(ids[i]).src = "chilatha.jpg"
+
+            }
+        }
 
     </script>
 
